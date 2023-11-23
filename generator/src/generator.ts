@@ -70,6 +70,13 @@ export default class Generator {
     const merkleRoot: string = merkleTree.getHexRoot();
     logger.info(`Generated Merkle root: ${merkleRoot}`);
 
+    const proofs = this.recipients.map(({ address, value }) => {
+      return {
+        proofs: merkleTree.getHexProof(this.generateLeaf(address, value)),
+        address,
+        value
+      };
+    });
     // Collect and save merkle tree + root
     await fs.writeFileSync(
       // Output to merkle.json
@@ -77,7 +84,7 @@ export default class Generator {
       // Root + full tree
       JSON.stringify({
         root: merkleRoot,
-        tree: merkleTree
+        proofs
       })
     );
     logger.info("Generated merkle tree and root saved to Merkle.json.");
