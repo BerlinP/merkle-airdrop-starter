@@ -35,13 +35,13 @@ A function that maps a bit string of arbitrary length to a fixed-length bit stri
 
 A Merkle tree is fundamentally just a hierarchical set of hash values, building from a set of actual data (Merkle leaf) to intermediate hashes (Merkle braches) and up to the Merkle root that summarizes all the data in one hash value.
 
-![Merkle Tree](assets\1_1e-wyMbvf8-u7Le1LUxTBA.webp?raw=true "A very small merkle tree")
+![Merkle Tree](https://raw.githubusercontent.com/BerlinP/merkle-airdrop-starter/master/assets/1_1e-wyMbvf8-u7Le1LUxTBA.webp?raw=true "A very small merkle tree")
 
 In this figure, the bottom nodes (Data1-Data4) are the actual data processed by the application. Each of these is summarized by their respective hash value (Hash1-Hash4), as a Merkle leaf. From these, the Merkle tree builds a hierarchy, combining hashes together until only one is left. The nodes combining other hash nodes are called Merkle branches (here Hash12 and Hash34). When there is only one left (here Hash1234), this is called the Merkle root. There can be multiple levels of branches and hashing as following examples will demonstrate.
 
 ### Verify data
 
-![Merkle Tree](assets\1_OA8k6-6HvA_4GJm1o6JrKQ.webp?raw=true "Verify block data")
+![Merkle Tree](https://raw.githubusercontent.com/BerlinP/merkle-airdrop-starter/master/assets/1_OA8k6-6HvA_4GJm1o6JrKQ.webp?raw=true "Verify block data")
 
 ### Use Cases
 
@@ -56,3 +56,9 @@ In this figure, the bottom nodes (Data1-Data4) are the actual data processed by 
 - Simplified Payment Verification (SPV)
 - Pool Mining: The Stratum Protocol
 - Airdrop
+
+## References
+
+- [Merkle Trees: Concepts and Use Cases](https://medium.com/coinmonks/merkle-trees-concepts-and-use-cases-5da873702318)
+- [Wikipedia: Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree)
+- [Cryptographic hash function](https://csrc.nist.gov/glossary/term/cryptographic_hash_function#:~:text=Approved%20hash%20functions%20satisfy%20the,map%20to%20the%20same%20output.)
